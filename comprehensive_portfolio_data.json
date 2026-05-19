@@ -1,0 +1,301 @@
+[
+  {
+    "type": "resume",
+    "title": "Resume - Experience",
+    "category": "resume",
+    "content": "SQL, Amazon Redshift , Oracle, MongoDB  \nPlatform Experience : Android Studio, UNIX, Google Cloud Platform, AWS, Firebase, MongoDB, Supabase  \nFrameworks/Libraries : Flutter, Angular, React.JS, Node.JS , Vue.js , Spring Boot, Flask, Git, TensorFlow , Scikit -Learn , Hibernate  \nConcepts: Design and Analysis of Algorithms, Object Oriented Programming, Database Management Systems, Computer \nArchitecture, Machine Learning, Object Oriented Design, Natural Language Processing  \n \nPROFESSIONAL  EXPERIENCE____________________________________________________ ___",
+    "source": "resume_document",
+    "section": "experience"
+  },
+  {
+    "type": "resume",
+    "title": "Resume - Experience",
+    "category": "resume",
+    "content": "Platform, AWS, Firebase, MongoDB, Supabase  \nFrameworks/Libraries : Flutter, Angular, React.JS, Node.JS , Vue.js , Spring Boot, Flask, Git, TensorFlow , Scikit -Learn , Hibernate  \nConcepts: Design and Analysis of Algorithms, Object Oriented Programming, Database Management Systems, Computer \nArchitecture, Machine Learning, Object Oriented Design, Natural Language Processing  \n \nPROFESSIONAL  EXPERIENCE____________________________________________________ _________ ________________ _ \n \nSyracuse University  | Microservices Architecture Research Assi",
+    "source": "resume_document",
+    "section": "experience"
+  },
+  {
+    "type": "resume",
+    "title": "Resume - Experience",
+    "category": "resume",
+    "content": "Oriented Design, Natural Language Processing  \n \nPROFESSIONAL  EXPERIENCE____________________________________________________ _________ ________________ _ \n \nSyracuse University  | Microservices Architecture Research Assistant                                                   May 202 5-Present  \n\u2022 Architected event -driven microservices platform  using Apache Kafka, CQRS,  and 4 polyglot databases ( PostgreSQL, \nMongoDB, Neo4j, Redis ) to support distributed social network operations with eventual consistency and fault tolerance patterns . \n\u2022 Implemented",
+    "source": "resume_document",
+    "section": "experience"
+  },
+  {
+    "type": "resume",
+    "title": "Resume - Experience",
+    "category": "resume",
+    "content": "gn, Natural Language Processing  \n \nPROFESSIONAL  EXPERIENCE____________________________________________________ _________ ________________ _ \n \nSyracuse University  | Microservices Architecture Research Assistant                                                   May 202 5-Present  \n\u2022 Architected event -driven microservices platform  using Apache Kafka, CQRS,  and 4 polyglot databases ( PostgreSQL, \nMongoDB, Neo4j, Redis ) to support distributed social network operations with eventual consistency and fault tolerance patterns . \n\u2022 Implemented distributed",
+    "source": "resume_document",
+    "section": "experience"
+  },
+  {
+    "type": "resume",
+    "title": "Resume - Experience",
+    "category": "resume",
+    "content": ", Neo4j, Redis ) to support distributed social network operations with eventual consistency and fault tolerance patterns . \n\u2022 Implemented distributed transaction management  through saga  orchestration and event sourcing patterns while deploying \ncontainerized services via Docker/Kubernetes  with monitoring using Jaeger  and Prometheus  for production -grade scalability.  \n \nWajooba | Software Developer | Summer Internship:                                        May 2022 -Aug 2022  \n\u2022 Engineered a comprehensive payment module , integrating dual pay",
+    "source": "resume_document",
+    "section": "experience"
+  },
+  {
+    "type": "resume",
+    "title": "Resume - Experience",
+    "category": "resume",
+    "content": "ress  and front -end technologies, improving user experience across \ndevices and reducing bounce rates by 31% while increasing average session duration by 2.4 minutes.  \n\u2022 Managed data architecture with MySQL  and MongoDB , optimizing database queries that improved page load times  \nby 42% and ensured robust web functionality through implementation of automated testing protocols  that reduced  \npost-deployment bugs by 87%.   \n \nACP IT Zone | Software  Developer | Summer Internship:              June 2021 -Aug 2021  \n\u2022 Created and u pgraded  live websites",
+    "source": "resume_document",
+    "section": "experience"
+  },
+  {
+    "type": "resume",
+    "title": "Resume - Experience",
+    "category": "resume",
+    "content": "unched real -time websites, and solved several networking issues involving DNS, IP, VPN  \n \nPROJECT S____________________________    ___________________________________ __________ ______________________  \n \nStock Trading and Portfolio Management App       \n\u2022 Built  a responsive full -stack application using  ReactJS, Spring Boot and MongoDB  for portfolio management.  \n\u2022 Introduced key features such as stock search, watchlist manager, buying and selling capabilities, and portfolio tracking.  \n \nEvent Booking and Management App  \n\u2022 Designed a respon",
+    "source": "resume_document",
+    "section": "experience"
+  },
+  {
+    "type": "resume",
+    "title": "Resume - Education",
+    "category": "resume",
+    "content": "6 -3196  | LinkedIn  | GitHub  | New York, NY  \n \nEDUCATION________________ ___                ______________________________________________________________ ______  \n \nSyracuse University, Syracuse, NY             Columbia                                    May 2025  \nMaster of Science, Computer Science               0 \n \nD Y Patil International University,  India     University of Southern California                             July 2023  \nBachelor of Technology, Computer Science Engineering  \nMinor \u2013 Artificial Intelligence and Machine Learning",
+    "source": "resume_document",
+    "section": "education"
+  },
+  {
+    "type": "resume",
+    "title": "Resume - Education",
+    "category": "resume",
+    "content": "_____________________________ ______  \n \nSyracuse University, Syracuse, NY             Columbia                                    May 2025  \nMaster of Science, Computer Science               0 \n \nD Y Patil International University,  India     University of Southern California                             July 2023  \nBachelor of Technology, Computer Science Engineering  \nMinor \u2013 Artificial Intelligence and Machine Learning          \n \nSKILLS_________________________  _____________________       ________________ _______ ___________________________  \n \nLang",
+    "source": "resume_document",
+    "section": "education"
+  },
+  {
+    "type": "resume",
+    "title": "Resume - Education",
+    "category": "resume",
+    "content": "cience               0 \n \nD Y Patil International University,  India     University of Southern California                             July 2023  \nBachelor of Technology, Computer Science Engineering  \nMinor \u2013 Artificial Intelligence and Machine Learning          \n \nSKILLS_________________________  _____________________       ________________ _______ ___________________________  \n \nLanguages: Python, Java, C, C++, JavaScript, HTML, CSS,  Dart, SQL  \nDatabases: MySQL, Azure Cloud, PostgreSQL, Amazon Redshift , Oracle, MongoDB  \nPlatform Experience : Andro",
+    "source": "resume_document",
+    "section": "education"
+  },
+  {
+    "type": "resume",
+    "title": "Resume - Education",
+    "category": "resume",
+    "content": "D Y Patil International University,  India     University of Southern California                             July 2023  \nBachelor of Technology, Computer Science Engineering  \nMinor \u2013 Artificial Intelligence and Machine Learning          \n \nSKILLS_________________________  _____________________       ________________ _______ ___________________________  \n \nLanguages: Python, Java, C, C++, JavaScript, HTML, CSS,  Dart, SQL  \nDatabases: MySQL, Azure Cloud, PostgreSQL, Amazon Redshift , Oracle, MongoDB  \nPlatform Experience : Android Studio, UNIX, Google",
+    "source": "resume_document",
+    "section": "education"
+  },
+  {
+    "type": "resume",
+    "title": "Resume - Education",
+    "category": "resume",
+    "content": "________ _________ ________________ _ \n \nSyracuse University  | Microservices Architecture Research Assistant                                                   May 202 5-Present  \n\u2022 Architected event -driven microservices platform  using Apache Kafka, CQRS,  and 4 polyglot databases ( PostgreSQL, \nMongoDB, Neo4j, Redis ) to support distributed social network operations with eventual consistency and fault tolerance patterns . \n\u2022 Implemented distributed transaction management  through saga  orchestration and event sourcing patterns while deploying \ncontain",
+    "source": "resume_document",
+    "section": "education"
+  },
+  {
+    "type": "resume",
+    "title": "Resume - Education",
+    "category": "resume",
+    "content": "ersaw Cpanel  operations for various e -commerce, educational, and corporate sites, managing intricate ecosystems adeptly . \n\u2022 Engineered and launched real -time websites, and solved several networking issues involving DNS, IP, VPN  \n \nPROJECT S____________________________    ___________________________________ __________ ______________________  \n \nStock Trading and Portfolio Management App       \n\u2022 Built  a responsive full -stack application using  ReactJS, Spring Boot and MongoDB  for portfolio management.  \n\u2022 Introduced key features such as stock sea",
+    "source": "resume_document",
+    "section": "education"
+  },
+  {
+    "type": "resume",
+    "title": "Resume - Education",
+    "category": "resume",
+    "content": "_________________  \n \nStudent Manager  | Syracuse University                                                Oct 2023 -Present   \n\u2022 Strengthened Syracuse University's support by overseeing student engagement ambassadors,  evaluated employee performance,  \nand led mentoring initiatives  for the Office of Alumni Engagement and Annual Giving",
+    "source": "resume_document",
+    "section": "education"
+  },
+  {
+    "type": "resume",
+    "title": "Resume - Education",
+    "category": "resume",
+    "content": "Oct 2023 -Present   \n\u2022 Strengthened Syracuse University's support by overseeing student engagement ambassadors,  evaluated employee performance,  \nand led mentoring initiatives  for the Office of Alumni Engagement and Annual Giving",
+    "source": "resume_document",
+    "section": "education"
+  },
+  {
+    "type": "resume",
+    "title": "Resume - Skills",
+    "category": "resume",
+    "content": "ial Intelligence and Machine Learning          \n \nSKILLS_________________________  _____________________       ________________ _______ ___________________________  \n \nLanguages: Python, Java, C, C++, JavaScript, HTML, CSS,  Dart, SQL  \nDatabases: MySQL, Azure Cloud, PostgreSQL, Amazon Redshift , Oracle, MongoDB  \nPlatform Experience : Android Studio, UNIX, Google Cloud Platform, AWS, Firebase, MongoDB, Supabase  \nFrameworks/Libraries : Flutter, Angular, React.JS, Node.JS , Vue.js , Spring Boot, Flask, Git, TensorFlow , Scikit -Learn , Hibernate  \nCo",
+    "source": "resume_document",
+    "section": "skills"
+  },
+  {
+    "type": "resume",
+    "title": "Resume - Skills",
+    "category": "resume",
+    "content": "sponsive websites using WordPress  and front -end technologies, improving user experience across \ndevices and reducing bounce rates by 31% while increasing average session duration by 2.4 minutes.  \n\u2022 Managed data architecture with MySQL  and MongoDB , optimizing database queries that improved page load times  \nby 42% and ensured robust web functionality through implementation of automated testing protocols  that reduced  \npost-deployment bugs by 87%.   \n \nACP IT Zone | Software  Developer | Summer Internship:              June 2021 -Aug 2021  \n\u2022 Created a",
+    "source": "resume_document",
+    "section": "skills"
+  },
+  {
+    "type": "resume",
+    "title": "Resume - Projects",
+    "category": "resume",
+    "content": "g improvement across both platforms.  \n \nKulkarni Projects | Software  Developer | Semester Internship:                 Jan 2023 -June 2023  \n\u2022 Developed and executed 8 responsive websites using WordPress  and front -end technologies, improving user experience across \ndevices and reducing bounce rates by 31% while increasing average session duration by 2.4 minutes.  \n\u2022 Managed data architecture with MySQL  and MongoDB , optimizing database queries that improved page load times  \nby 42% and ensured robust web functionality through implementation of auto",
+    "source": "resume_document",
+    "section": "projects"
+  },
+  {
+    "type": "resume",
+    "title": "Resume - Projects",
+    "category": "resume",
+    "content": "____ ______________________  \n \nStock Trading and Portfolio Management App       \n\u2022 Built  a responsive full -stack application using  ReactJS, Spring Boot and MongoDB  for portfolio management.  \n\u2022 Introduced key features such as stock search, watchlist manager, buying and selling capabilities, and portfolio tracking.  \n \nEvent Booking and Management App  \n\u2022 Designed a responsive full -stack application in Angular, NodeJS, MongoDB  with searching and booking features .  \n\u2022 Implemented key functionalities such as event searching, venue display, and comp",
+    "source": "resume_document",
+    "section": "projects"
+  },
+  {
+    "type": "resume",
+    "title": "Resume - Projects",
+    "category": "resume",
+    "content": "tion using  ReactJS, Spring Boot and MongoDB  for portfolio management.  \n\u2022 Introduced key features such as stock search, watchlist manager, buying and selling capabilities, and portfolio tracking.  \n \nEvent Booking and Management App  \n\u2022 Designed a responsive full -stack application in Angular, NodeJS, MongoDB  with searching and booking features .  \n\u2022 Implemented key functionalities such as event searching, venue display, and comprehensive booking management.  \n\u2022 Successfully deployed on Google Cloud Platform  for reliable and scalable performance.",
+    "source": "resume_document",
+    "section": "projects"
+  },
+  {
+    "type": "resume",
+    "title": "Resume - Projects",
+    "category": "resume",
+    "content": "ist manager, buying and selling capabilities, and portfolio tracking.  \n \nEvent Booking and Management App  \n\u2022 Designed a responsive full -stack application in Angular, NodeJS, MongoDB  with searching and booking features .  \n\u2022 Implemented key functionalities such as event searching, venue display, and comprehensive booking management.  \n\u2022 Successfully deployed on Google Cloud Platform  for reliable and scalable performance.  \n \nReselling Used Textbooks App  \n\u2022 Implemented a RESTful API  in Java  to handle  a used textbook inventory, applying design pat",
+    "source": "resume_document",
+    "section": "projects"
+  },
+  {
+    "type": "github_profile",
+    "title": "GitHub Profile Overview",
+    "category": "github",
+    "content": "GitHub Profile: Sanika Kulkarni\n                Bio: Software Engineer\r\n\n                Location: New York, NY\n                Public Repositories: 12\n                Followers: 0\n                Following: 0\n                Account Created: 2021-04-17T09:49:10Z\n                Company: None",
+    "source": "github_api"
+  },
+  {
+    "type": "github_repository",
+    "title": "GitHub Repository - portfolio",
+    "category": "github",
+    "content": "Repository: portfolio\n                        Description: Interactive chat-based portfolio using Llama\n                        Language: Python\n                        Stars: 0\n                        Forks: 0\n                        Last Updated: 2025-08-09T21:14:59Z\n                        Topics:",
+    "source": "github_api",
+    "repo_name": "portfolio",
+    "language": "Python",
+    "stars": 0
+  },
+  {
+    "type": "github_repository",
+    "title": "GitHub Repository - portfolio_rag",
+    "category": "github",
+    "content": "Repository: portfolio_rag\n                        Description: None\n                        Language: JavaScript\n                        Stars: 0\n                        Forks: 0\n                        Last Updated: 2025-08-09T21:04:32Z\n                        Topics:",
+    "source": "github_api",
+    "repo_name": "portfolio_rag",
+    "language": "JavaScript",
+    "stars": 0
+  },
+  {
+    "type": "github_repository",
+    "title": "GitHub Repository - leetcode",
+    "category": "github",
+    "content": "Repository: leetcode\n                        Description: Daily LeetCode Practice problems\n                        Language: None\n                        Stars: 0\n                        Forks: 0\n                        Last Updated: 2025-04-14T23:17:00Z\n                        Topics:",
+    "source": "github_api",
+    "repo_name": "leetcode",
+    "language": null,
+    "stars": 0
+  },
+  {
+    "type": "github_repository",
+    "title": "GitHub Repository - sanikakulkarni89",
+    "category": "github",
+    "content": "Repository: sanikakulkarni89\n                        Description: Github profile README\n                        Language: None\n                        Stars: 0\n                        Forks: 0\n                        Last Updated: 2025-04-14T01:29:24Z\n                        Topics:",
+    "source": "github_api",
+    "repo_name": "sanikakulkarni89",
+    "language": null,
+    "stars": 0
+  },
+  {
+    "type": "github_repository",
+    "title": "GitHub Repository - recommender-app",
+    "category": "github",
+    "content": "Repository: recommender-app\n                        Description: LeetCode Problem Recommender: An intelligent system that suggests personalized coding challenges based on user skill level, topic preferences, and solution history.\n                        Language: Python\n                        Stars: 0\n                        Forks: 0\n                        Last Updated: 2025-03-21T02:25:50Z\n                        Topics:",
+    "source": "github_api",
+    "repo_name": "recommender-app",
+    "language": "Python",
+    "stars": 0
+  },
+  {
+    "type": "github_repository",
+    "title": "GitHub Repository - lamp",
+    "category": "github",
+    "content": "Repository: lamp\n                        Description: A timer tool application for efficient Job-Search based on the LAMP concept in the book 'The 2-Hour Job Search' by Steve Dalton\n                        Language: TypeScript\n                        Stars: 0\n                        Forks: 0\n                        Last Updated: 2025-03-19T18:10:11Z\n                        Topics:",
+    "source": "github_api",
+    "repo_name": "lamp",
+    "language": "TypeScript",
+    "stars": 0
+  },
+  {
+    "type": "github_repository",
+    "title": "GitHub Repository - headliner",
+    "category": "github",
+    "content": "Repository: headliner\n                        Description: Personalized news dashboard built with React, JavaScript, and NewsAPI that delivers customized content based on user preferences\n                        Language: JavaScript\n                        Stars: 0\n                        Forks: 0\n                        Last Updated: 2025-03-13T21:33:35Z\n                        Topics:",
+    "source": "github_api",
+    "repo_name": "headliner",
+    "language": "JavaScript",
+    "stars": 0
+  },
+  {
+    "type": "github_repository",
+    "title": "GitHub Repository - cli-task-manager",
+    "category": "github",
+    "content": "Repository: cli-task-manager\n                        Description: A terminal-based task management system that lets you add, complete, and track tasks without leaving the command line\n                        Language: Python\n                        Stars: 0\n                        Forks: 0\n                        Last Updated: 2025-03-13T21:17:48Z\n                        Topics:",
+    "source": "github_api",
+    "repo_name": "cli-task-manager",
+    "language": "Python",
+    "stars": 0
+  },
+  {
+    "type": "github_repository",
+    "title": "GitHub Repository - flight-delay-prediction",
+    "category": "github",
+    "content": "Repository: flight-delay-prediction\n                        Description: Predicting flights status of flights arriving in Syracuse\n                        Language: None\n                        Stars: 0\n                        Forks: 0\n                        Last Updated: 2025-01-07T16:41:13Z\n                        Topics:",
+    "source": "github_api",
+    "repo_name": "flight-delay-prediction",
+    "language": null,
+    "stars": 0
+  },
+  {
+    "type": "github_repository",
+    "title": "GitHub Repository - BookStore",
+    "category": "github",
+    "content": "Repository: BookStore\n                        Description: BookStore for used textbooks created using Java and SpringBoot implementing design patterns and core concepts\n                        Language: Java\n                        Stars: 0\n                        Forks: 0\n                        Last Updated: 2025-01-02T01:51:54Z\n                        Topics:",
+    "source": "github_api",
+    "repo_name": "BookStore",
+    "language": "Java",
+    "stars": 0
+  },
+  {
+    "type": "github_repository",
+    "title": "GitHub Repository - Stock-Tracker",
+    "category": "github",
+    "content": "Repository: Stock-Tracker\n                        Description: Fully responsive full-stack application utilizing ReactJS and Spring Boot\n                        Language: JavaScript\n                        Stars: 0\n                        Forks: 0\n                        Last Updated: 2024-07-22T01:30:20Z\n                        Topics:",
+    "source": "github_api",
+    "repo_name": "Stock-Tracker",
+    "language": "JavaScript",
+    "stars": 0
+  },
+  {
+    "type": "leetcode_profile",
+    "title": "LeetCode Profile",
+    "category": "leetcode",
+    "content": "LeetCode Profile: sanikask89\n                    Real Name: Sanika Kulkarni\n                    About: \n                    Country: United States\n                    Company: None\n                    Ranking: 398926",
+    "source": "leetcode_api"
+  },
+  {
+    "type": "leetcode_stats",
+    "title": "LeetCode Statistics",
+    "category": "leetcode",
+    "content": "LeetCode Submission Statistics:\nAll: 322 problems solved\nEasy: 122 problems solved\nMedium: 172 problems solved\nHard: 28 problems solved",
+    "source": "leetcode_api"
+  }
+]

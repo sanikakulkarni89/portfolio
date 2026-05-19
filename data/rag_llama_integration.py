@@ -39,19 +39,25 @@ class PortfolioRAGChat:
     def _test_ollama_connection(self):
         """Test if Ollama is running and model is available"""
         try:
-            response = requests.post(f"{self.ollama_url}/api/generate", 
-                                   json={
-                                       "model": self.model_name,
-                                       "prompt": "Hello",
-                                       "stream": False
-                                   }, timeout=20)
-            if response.status_code == 200:
-                print(f"✅ Ollama connection successful with model: {self.model_name}")
-            else:
-                print(f"❌ Ollama error: {response.status_code}")
-        except requests.exceptions.RequestException as e:
-            print(f"❌ Cannot connect to Ollama at {self.ollama_url}")
+            # quick tags check
+            tags = requests.get(f"{self.ollama_url}/api/tags", timeout=10)
+            if tags.status_code != 200:
+                raise RuntimeError(f"Ollama /api/tags returned {tags.status_code}")
+            # verify model responds (longer timeout)
+            resp = requests.post(
+                f"{self.ollama_url}/api/generate",
+                json={"model": f"{self.model_name}:latest" if ":" not in self.model_name else self.model_name,
+                      "prompt": "Hello",
+                      "stream": False},
+                timeout=60
+            )
+            if resp.status_code != 200:
+                raise RuntimeError(f"Ollama /api/generate returned {resp.status_code}")
+            print("✅ Ollama reachable and model responded")
+        except Exception as e:
+            print("❌ Cannot connect to Ollama at", self.ollama_url)
             print("Make sure Ollama is running: ollama serve")
+            print("❌ Error:", str(e))
             raise
     
     def retrieve_context(self, query: str, n_results: int = 5) -> tuple:

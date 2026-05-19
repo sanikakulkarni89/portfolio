@@ -1,0 +1,32 @@
+{
+  "profile": {
+    "name": "Your Full Name",
+    "headline": "Your Professional Headline",
+    "summary": "Your LinkedIn summary/about section",
+    "location": "Your Location",
+    "industry": "Your Industry"
+  },
+  "experience": [
+    {
+      "title": "Job Title",
+      "company": "Company Name",
+      "duration": "Start Date - End Date",
+      "description": "Job description and achievements",
+      "location": "Job Location"
+    }
+  ],
+  "education": [
+    {
+      "school": "Institution Name",
+      "degree": "Degree Title",
+      "field": "Field of Study",
+      "dates": "Start Year - End Year",
+      "description": "Additional details"
+    }
+  ],
+  "skills": [
+    "Skill 1",
+    "Skill 2",
+    "Skill 3"
+  ]
+}

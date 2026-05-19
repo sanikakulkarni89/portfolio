@@ -1,68 +1,656 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 100%; height: 100%; overflow: hidden; background: #fdf0e8; }
+
+/* ═══════════════════════════════
+   CUSTOM CURSOR
+═══════════════════════════════ */
+* { cursor: url('/cursor-arrow.svg') 0 0, auto !important; }
+
+.pxc-trail {
+  position: fixed;
+  pointer-events: none; z-index: 99998;
+  line-height: 1;
+  animation: pxc-trail-fade 0.55s ease-out forwards;
+}
+@keyframes pxc-trail-fade {
+  0%   { opacity: 0.65; transform: translate(-50%,-50%) scale(1)    rotate(0deg)   translateY(0); }
+  100% { opacity: 0;    transform: translate(-50%,-50%) scale(0.1)  rotate(110deg) translateY(-14px); }
+}
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --cream:   #fdf0e8;
+  --pink:    #f5a7c7;
+  --purple:  #c4a8e8;
+  --blue:    #a4bde8;
+  --mint:    #a8e8c4;
+  --peach:   #e8c4a4;
+  --yellow:  #e8e0a4;
+  --brown:   #7d5a3c;
+  --dark:    #1e120a;
+  --px:      "Press Start 2P", monospace;
+  --bounce:  cubic-bezier(0.34, 1.56, 0.64, 1);
+  --out:     cubic-bezier(0.0, 0.0, 0.2, 1.0);
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+/* ═══════════════════════════════
+   ROOM PAGE
+═══════════════════════════════ */
+.room-wrapper {
+  width: 100vw; height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.room-container {
+  position: relative;
+  width: min(100vw, 100vh);
+  aspect-ratio: 1 / 1;
+  animation: room-in 1.4s var(--out) both;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+@keyframes room-in {
+  from { opacity: 0; transform: scale(0.97); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.room-image {
+  width: 100%; height: 100%;
+  display: block;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  user-select: none; pointer-events: none; draggable: false;
+}
+
+/* ═══════════════════════════════
+   HOTSPOTS
+═══════════════════════════════ */
+.hotspot {
+  position: absolute;
   cursor: pointer;
-  transition: border-color 0.25s;
+  z-index: 1;
 }
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.hotspot:hover { z-index: 30; }
+
+.hs-clip {
+  position: absolute; inset: 0;
+  transform-origin: center 85%;
+  transition:
+    transform 0.5s var(--bounce),
+    filter    0.3s ease;
+  pointer-events: none;
+  will-change: transform;
+  animation: hs-halo 2.8s ease-in-out infinite;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+@keyframes hs-halo {
+  0%, 100% {
+    filter:
+      drop-shadow(0 0  4px color-mix(in srgb, var(--c) 35%, transparent))
+      drop-shadow(0 0  8px color-mix(in srgb, var(--c) 15%, transparent));
   }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
+  50% {
+    filter:
+      drop-shadow(0 0  8px color-mix(in srgb, var(--c) 60%, transparent))
+      drop-shadow(0 0 18px color-mix(in srgb, var(--c) 28%, transparent));
   }
 }
+
+.hotspot:hover .hs-clip {
+  animation: none;
+  transform: scale(1.16);
+  filter:
+    drop-shadow(0 20px 28px rgba(0,0,0,0.72))
+    drop-shadow(0  6px 10px rgba(0,0,0,0.45))
+    drop-shadow(0  0   20px color-mix(in srgb, var(--c) 70%, transparent))
+    brightness(1.09)
+    saturate(1.1);
+}
+
+.hs-img {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+/* ═══════════════════════════════
+   LABELS
+═══════════════════════════════ */
+.hs-label {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%) translateY(8px);
+  display: flex; align-items: center; gap: 7px;
+  background: var(--dark);
+  border: 3px solid var(--c);
+  padding: 9px 14px;
+  white-space: nowrap;
+  opacity: 0;
+  transition:
+    opacity 0.2s ease,
+    transform 0.35s var(--bounce);
+  pointer-events: none;
+  z-index: 50;
+  box-shadow:
+    -3px 0 0 0 var(--c),
+     3px 0 0 0 var(--c),
+     0 -3px 0 0 var(--c),
+     0  3px 0 0 var(--c);
+}
+.hotspot:hover .hs-label {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.hs-label-icon { font-size: 14px; line-height: 1; }
+.hs-label-text {
+  font-family: "Press Start 2P", monospace;
+  font-size: 8px;
+  color: var(--c);
+  letter-spacing: 1.5px;
+  line-height: 1;
+}
+
+/* ═══════════════════════════════
+   SPARKLES
+═══════════════════════════════ */
+.sparkle {
+  position: absolute;
+  pointer-events: none;
+  z-index: 40;
+  font-style: normal;
+  color: var(--c, var(--pink));
+  animation: spark 0.85s ease-out forwards;
+  font-size: 12px;
+  line-height: 1;
+}
+@keyframes spark {
+  0%   { opacity: 0; transform: translate(0,0) rotate(0deg) scale(0.4); }
+  25%  { opacity: 1; transform: translate(var(--dx1), var(--dy1)) rotate(45deg) scale(1.3); }
+  100% { opacity: 0; transform: translate(var(--dx2), var(--dy2)) rotate(200deg) scale(0.2); }
+}
+
+/* ═══════════════════════════════
+   HINT
+═══════════════════════════════ */
+.room-hint {
+  position: absolute;
+  bottom: 3.5%;
+  left: 50%; transform: translateX(-50%);
+  font-family: "Press Start 2P", monospace;
+  font-size: 7px;
+  color: var(--brown);
+  letter-spacing: 2px;
+  text-align: center;
+  white-space: nowrap;
+  animation: hint-life 5s ease 1.8s both;
+  pointer-events: none;
+  z-index: 5;
+}
+@keyframes hint-life {
+  0%   { opacity: 0; }
+  15%  { opacity: 0.7; }
+  75%  { opacity: 0.5; }
+  100% { opacity: 0; }
+}
+
+/* ═══════════════════════════════
+   SECTION PAGES — BASE
+═══════════════════════════════ */
+.room-bg {
+  position: fixed; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--cream);
+  z-index: 0;
+}
+.room-bg-img {
+  width: min(100vw, 100vh);
+  height: min(100vw, 100vh);
+  image-rendering: pixelated;
+  filter: brightness(0.35) saturate(0.5);
+  display: block;
+}
+
+/* ═══════════════════════════════
+   CONTENT PANEL
+═══════════════════════════════ */
+.content-panel {
+  position: fixed; inset: 0;
+  display: flex; align-items: flex-end; justify-content: center;
+  padding: clamp(12px, 2vw, 24px);
+  z-index: 10;
+  pointer-events: none;
+}
+
+.panel-inner {
+  width: 100%;
+  max-width: 900px;
+  height: 62vh;
+  background: #1a0e07;
+  border: 4px solid var(--pc, var(--pink));
+  display: flex; flex-direction: column;
+  pointer-events: all;
+  transform: translateY(110%);
+  opacity: 0;
+  transition:
+    transform 0.65s var(--bounce),
+    opacity   0.4s ease;
+  box-shadow:
+    -6px  0   0 0 var(--pc, var(--pink)),
+     6px  0   0 0 var(--pc, var(--pink)),
+     0   -6px 0 0 var(--pc, var(--pink)),
+     0    6px 0 0 var(--pc, var(--pink)),
+     0    0  40px color-mix(in srgb, var(--pc, var(--pink)) 30%, transparent);
+  overflow: hidden;
+}
+
+.content-panel.active .panel-inner {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* panel top bar */
+.panel-top {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 18px 24px 16px;
+  border-bottom: 3px solid var(--pc, var(--pink));
+  background: color-mix(in srgb, var(--pc, var(--pink)) 12%, transparent);
+  flex-shrink: 0;
+}
+.panel-title-row { display: flex; align-items: center; gap: 12px; }
+.panel-icon { font-size: 22px; line-height: 1; }
+.panel-title {
+  font-family: "Press Start 2P", monospace;
+  font-size: clamp(9px, 1.4vw, 15px);
+  color: var(--pc, var(--pink));
+  letter-spacing: 2px;
+  line-height: 1;
+}
+
+.back-btn {
+  font-family: "Press Start 2P", monospace;
+  font-size: 8px;
+  color: var(--pc, var(--pink));
+  text-decoration: none;
+  border: 3px solid var(--pc, var(--pink));
+  padding: 8px 14px;
+  letter-spacing: 1px;
+  line-height: 1;
+  transition: background 0.15s, color 0.15s;
+  display: inline-block;
+  background: transparent;
+}
+.back-btn:hover {
+  background: var(--pc, var(--pink));
+  color: var(--dark);
+}
+
+/* scrollable body */
+.panel-scroll {
+  flex: 1; overflow-y: auto;
+  padding: clamp(16px, 2.5vw, 32px) clamp(16px, 3vw, 36px);
+  scrollbar-width: thin;
+  scrollbar-color: var(--pc, var(--pink)) #1a0e07;
+}
+.panel-scroll::-webkit-scrollbar { width: 5px; }
+.panel-scroll::-webkit-scrollbar-track { background: #1a0e07; }
+.panel-scroll::-webkit-scrollbar-thumb {
+  background: var(--pc, var(--pink));
+  border-radius: 0;
+}
+
+/* ═══════════════════════════════
+   SHARED COMPONENTS
+═══════════════════════════════ */
+.section-label {
+  font-family: "Press Start 2P", monospace;
+  font-size: 7px;
+  color: var(--pc, var(--pink));
+  letter-spacing: 3px;
+  opacity: 0.6;
+  margin-bottom: 22px;
+  text-transform: uppercase;
+}
+
+/* ── TIMELINE (education) ── */
+.timeline { position: relative; padding-left: 4px; }
+.timeline-line {
+  position: absolute;
+  left: 0; top: 8px; bottom: 8px;
+  width: 3px;
+  background: linear-gradient(to bottom, var(--pc, var(--pink)), transparent);
+  opacity: 0.35;
+}
+.timeline-item {
+  position: relative;
+  padding: 0 0 36px 28px;
+}
+.timeline-dot {
+  position: absolute;
+  left: -5px; top: 5px;
+  width: 13px; height: 13px;
+  background: var(--pc, var(--pink));
+  border: 3px solid var(--dark);
+  image-rendering: pixelated;
+}
+.tl-date {
+  font-family: "Press Start 2P", monospace;
+  font-size: 7px;
+  color: var(--pc, var(--pink));
+  opacity: 0.75;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+.tl-school {
+  font-family: "Press Start 2P", monospace;
+  font-size: 9px;
+  color: #fdf8f4;
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+.tl-degree {
+  font-size: 13px;
+  color: #c8b4a0;
+  margin-bottom: 6px;
+  line-height: 1.6;
+}
+.tl-detail {
+  font-size: 12px;
+  color: #7a6a5a;
+  line-height: 1.7;
+}
+.tl-badge {
+  display: inline-block;
+  font-family: "Press Start 2P", monospace;
+  font-size: 6px;
+  border: 2px solid var(--pc, var(--pink));
+  color: var(--pc, var(--pink));
+  padding: 3px 8px;
+  margin-top: 8px;
+}
+
+/* ── WORK CARDS ── */
+.work-card {
+  border: 2px solid color-mix(in srgb, var(--pc, var(--purple)) 50%, transparent);
+  padding: 20px 22px;
+  margin-bottom: 18px;
+  transition: border-color 0.2s, transform 0.3s var(--bounce), background 0.2s;
+}
+.work-card:hover {
+  border-color: var(--pc, var(--purple));
+  background: color-mix(in srgb, var(--pc, var(--purple)) 6%, transparent);
+  transform: translateY(-5px);
+}
+.work-role {
+  font-family: "Press Start 2P", monospace;
+  font-size: 9px;
+  color: var(--pc, var(--purple));
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+.work-company {
+  font-family: "Press Start 2P", monospace;
+  font-size: 7px;
+  color: #fdf8f4;
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+.work-date {
+  font-size: 11px;
+  color: #6a5a4a;
+  margin-bottom: 14px;
+}
+.work-bullets { list-style: none; margin-bottom: 14px; }
+.work-bullets li {
+  font-size: 12px; color: #c8b4a0;
+  line-height: 1.8; padding-left: 18px; position: relative;
+  margin-bottom: 4px;
+}
+.work-bullets li::before {
+  content: '▸';
+  position: absolute; left: 0;
+  color: var(--pc, var(--purple)); font-size: 10px;
+}
+
+/* ── TAGS ── */
+.tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 10px; }
+.tag {
+  font-family: "Press Start 2P", monospace;
+  font-size: 6px;
+  padding: 5px 9px;
+  border: 2px solid color-mix(in srgb, var(--pc, var(--purple)) 60%, transparent);
+  color: color-mix(in srgb, var(--pc, var(--purple)) 80%, #fdf8f4);
+  letter-spacing: 1px;
+}
+
+/* ── PROJECTS GRID ── */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 16px;
+}
+.project-card {
+  border: 2px solid color-mix(in srgb, var(--pc, var(--blue)) 50%, transparent);
+  padding: 18px;
+  transition: border-color 0.2s, transform 0.3s var(--bounce), background 0.2s;
+}
+.project-card:hover {
+  border-color: var(--pc, var(--blue));
+  transform: translateY(-5px);
+  background: color-mix(in srgb, var(--pc, var(--blue)) 6%, transparent);
+}
+.project-name {
+  font-family: "Press Start 2P", monospace;
+  font-size: 8px;
+  color: var(--pc, var(--blue));
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+.project-desc {
+  font-size: 12px; color: #c8b4a0;
+  line-height: 1.7; margin-bottom: 12px;
+}
+.project-links { display: flex; gap: 9px; margin-top: 12px; }
+.project-link {
+  font-family: "Press Start 2P", monospace; font-size: 6px;
+  color: var(--pc, var(--blue));
+  text-decoration: none;
+  border: 2px solid var(--pc, var(--blue));
+  padding: 5px 10px;
+  transition: background 0.15s, color 0.15s;
+}
+.project-link:hover {
+  background: var(--pc, var(--blue));
+  color: var(--dark);
+}
+
+/* ── HOBBIES ── */
+.hobbies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 14px;
+}
+.hobby-card {
+  border: 2px solid color-mix(in srgb, var(--pc, var(--mint)) 50%, transparent);
+  padding: 20px 12px;
+  text-align: center;
+  transition:
+    border-color 0.2s,
+    transform 0.3s var(--bounce),
+    background 0.2s;
+}
+.hobby-card:hover {
+  border-color: var(--pc, var(--mint));
+  transform: translateY(-5px) rotate(-1.5deg);
+  background: color-mix(in srgb, var(--pc, var(--mint)) 8%, transparent);
+}
+.hobby-emoji { font-size: 30px; display: block; margin-bottom: 10px; }
+.hobby-name {
+  font-family: "Press Start 2P", monospace;
+  font-size: 7px; color: var(--pc, var(--mint));
+  letter-spacing: 1px; line-height: 1.4;
+}
+.hobby-desc {
+  font-size: 11px; color: #7a6a5a;
+  margin-top: 6px; line-height: 1.5;
+}
+.hobbies-intro {
+  font-size: 13px; color: #8a7a6a; line-height: 1.9;
+  margin-bottom: 28px;
+  border-left: 3px solid var(--pc);
+  padding-left: 16px;
+}
+
+/* ── ART GALLERY ── */
+.art-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 12px;
+}
+.art-item {
+  aspect-ratio: 1;
+  border: 3px solid color-mix(in srgb, var(--pc, var(--peach)) 55%, transparent);
+  overflow: hidden; position: relative; cursor: pointer;
+  transition: border-color 0.2s, transform 0.3s var(--bounce);
+}
+.art-item:hover {
+  border-color: var(--pc, var(--peach));
+  transform: scale(1.05);
+}
+.art-item img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  image-rendering: pixelated;
+  display: block;
+  transition: filter 0.3s;
+}
+.art-item:hover img { filter: brightness(1.1); }
+.art-placeholder {
+  width: 100%; height: 100%;
+  background: color-mix(in srgb, var(--pc, var(--peach)) 10%, #1a0e07);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 8px;
+}
+.art-ph-icon { font-size: 30px; opacity: 0.45; }
+.art-ph-text {
+  font-family: "Press Start 2P", monospace; font-size: 6px;
+  color: var(--pc, var(--peach)); opacity: 0.45;
+}
+.art-label {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: color-mix(in srgb, var(--dark) 85%, transparent);
+  font-family: "Press Start 2P", monospace; font-size: 6px;
+  color: var(--pc, var(--peach));
+  padding: 7px 8px;
+  transform: translateY(100%);
+  transition: transform 0.25s ease;
+}
+.art-item:hover .art-label { transform: translateY(0); }
+.art-filter-row {
+  display: flex; gap: 10px; flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+.art-filter {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 7px;
+  padding: 7px 14px;
+  background: transparent;
+  border: 2px solid color-mix(in srgb, var(--pc) 45%, transparent);
+  color: color-mix(in srgb, var(--pc) 65%, transparent);
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: all 0.15s;
+}
+.art-filter:hover,
+.art-filter.active {
+  background: var(--pc);
+  border-color: var(--pc);
+  color: #1e120a;
+}
+.art-intro {
+  font-size: 13px; color: #8a7a6a; line-height: 1.9;
+  margin-bottom: 24px;
+  border-left: 3px solid var(--pc);
+  padding-left: 16px;
+}
+
+/* ── CAT ── */
+.cat-hero {
+  border: 4px solid var(--pc, var(--yellow));
+  aspect-ratio: 3/2;
+  overflow: hidden;
+  margin-bottom: 22px;
+  background: color-mix(in srgb, var(--pc, var(--yellow)) 15%, #110a04);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 70px;
+  cursor: pointer;
+  transition: filter 0.2s;
+}
+.cat-hero:hover { filter: brightness(1.1); }
+.cat-hero img { width: 100%; height: 100%; object-fit: contain; object-position: center center; image-rendering: pixelated; }
+.cat-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 22px; }
+.cat-stat {
+  border: 2px solid color-mix(in srgb, var(--pc, var(--yellow)) 50%, transparent);
+  padding: 14px 16px; transition: border-color 0.2s;
+}
+.cat-stat:hover { border-color: var(--pc, var(--yellow)); }
+.cat-stat-label {
+  font-family: "Press Start 2P", monospace; font-size: 6px;
+  color: var(--pc, var(--yellow)); opacity: 0.65;
+  margin-bottom: 7px; text-transform: uppercase; letter-spacing: 1px;
+}
+.cat-stat-val { font-size: 14px; color: #fdf8f4; line-height: 1.5; }
+.cat-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.cat-photo {
+  aspect-ratio: 1;
+  border: 2px solid color-mix(in srgb, var(--pc, var(--yellow)) 40%, transparent);
+  background: color-mix(in srgb, var(--pc, var(--yellow)) 12%, #110a04);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 28px; opacity: 0.6;
+  transition: opacity 0.2s, border-color 0.2s; overflow: hidden;
+}
+.cat-photo:hover { opacity: 1; border-color: var(--pc, var(--yellow)); }
+.cat-photo img { width: 100%; height: 100%; object-fit: contain; object-position: center center; image-rendering: pixelated; }
+.cat-name-hero { text-align: center; margin-bottom: 20px; }
+.cat-name-hero h2 {
+  font-family: 'Press Start 2P', monospace;
+  font-size: clamp(14px, 2.5vw, 24px);
+  color: var(--pc); letter-spacing: 3px; margin-bottom: 8px;
+}
+.cat-name-hero p { font-size: 12px; color: #7a6a5a; letter-spacing: 1px; }
+.cat-quote {
+  font-size: 13px; color: #8a7a6a; line-height: 1.9; text-align: center;
+  border: 2px solid color-mix(in srgb, var(--pc) 40%, transparent);
+  padding: 16px 20px; margin-bottom: 22px; font-style: italic;
+}
+.cat-facts-title {
+  font-family: 'Press Start 2P', monospace; font-size: 7px; color: var(--pc);
+  letter-spacing: 2px; margin: 24px 0 14px; opacity: 0.7;
+}
+.cat-facts { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-bottom: 24px; }
+.cat-facts li { font-size: 13px; color: #c8b4a0; line-height: 1.7; padding-left: 20px; position: relative; }
+.cat-facts li::before { content: '🐾'; position: absolute; left: 0; font-size: 11px; }
+
+/* ═══════════════════════════════
+   LOADING SCREEN
+═══════════════════════════════ */
+.loading-screen {
+  position: fixed; inset: 0;
+  background: var(--dark);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 100;
+  animation: loading-out 0.6s ease 1s both;
+  pointer-events: none;
+}
+@keyframes loading-out { to { opacity: 0; } }
+.loading-dot {
+  font-family: "Press Start 2P", monospace;
+  font-size: 10px; color: var(--pink);
+  letter-spacing: 3px;
+  animation: blink 0.5s step-end infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }

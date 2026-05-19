@@ -1,0 +1,16 @@
+# macOS
+.DS_Store
+
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# Personal documents — keep off public GitHub
+data/*.zip
+data/*.pdf
+data/Basic_LinkedInDataExport*/
+
+# Misc
+site/
+room.jpg
