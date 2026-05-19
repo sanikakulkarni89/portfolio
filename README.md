@@ -9,11 +9,11 @@
 ```
   ┌──────────────────────────────────────────────────────┐
   │                                                      │
-  │   📚 education    💻 work    🗂️ projects             │
+  │   📚 education    💻 work    🗂️ projects              │
   │                                                      │
-  │         ✦ click an object to explore ✦              │
+  │         ✦ click an object to explore ✦               │
   │                                                      │
-  │   🌿 hobbies                       🐱 my cat        │
+  │   🌿 hobbies                       🐱 my cat          │
   │                                                      │
   └──────────────────────────────────────────────────────┘
 ```
@@ -25,14 +25,6 @@
 a personal portfolio disguised as a pixel art bedroom. instead of a nav bar, you get a room. click on things. sparks fly.
 
 built because a standard portfolio felt too formal for someone whose cat sits on the keyboard during every single video call.
-
----
-
-## who is behind this
-
-**Sanika Kulkarni** — MS Computer Science @ Syracuse University (May 2025), currently doing research on microservices and distributed systems.
-
-previously: built payment integrations, automated architecture pipelines, deployed things on three different clouds. currently: architecting event-driven systems with more databases than most people have houseplants.
 
 ---
 
@@ -86,13 +78,6 @@ portfolio/
 └── data/                   # portfolio RAG system (separate backend)
 ```
 
----
-
-## the most important section
-
-**Cheese** is a Doll Faced Persian who is almost 6 years old and has supervised every commit in this repo. he has approved none of them. his favourite spot is the keyboard, his favourite treat is Fancy Feast pâté (only the pâté), and he has never once knocked something off a surface *accidentally*.
-
-he has a dedicated page. he earned it.
 
 ---
 
